@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:password_generator/core/colors/colors.dart';
+import 'package:password_generator/features/splash/presentation/bloc/splash/splash_bloc.dart';
 import 'package:password_generator/features/splash/presentation/pages/splash.dart';
 
 void main() {
@@ -10,13 +13,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Password generator',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => SplashBloc()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Password generator',
+        theme: ThemeData(
+          scaffoldBackgroundColor: ConstantColor.scaffoldBackgroundColor,
+          useMaterial3: true,
+        ),
+        home: const ScreenSplash(),
       ),
-      home: const ScreenSplash(),
     );
   }
 }
