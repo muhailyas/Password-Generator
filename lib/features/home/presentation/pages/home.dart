@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:password_generator/core/colors/colors.dart';
+import 'package:password_generator/features/home/data/models/password_generate_model.dart';
+import 'package:password_generator/features/home/presentation/bloc/save_password/save_password_bloc.dart';
 import 'package:password_generator/features/home/presentation/pages/saved_passwords.dart';
 
+import '../../data/models/save_password.dart';
+import '../bloc/home/home_bloc.dart';
+import '../widgets/checkbox_widget.dart';
+
 class ScreenHome extends StatelessWidget {
-  const ScreenHome({super.key});
+  ScreenHome({super.key});
+  final TextEditingController _title = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // Get the screen width
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    final bloc = BlocProvider.of<HomeBloc>(context);
 
     return Scaffold(
         body: CustomScrollView(
@@ -44,7 +53,7 @@ class ScreenHome extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const CheckBoxWidget(),
+                const CheckBoxWidget(checkboxItems: CheckboxItems.lowerCase),
                 FittedBox(
                   fit: BoxFit.contain,
                   child: Text(
@@ -55,7 +64,7 @@ class ScreenHome extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CheckBoxWidget(),
+                const CheckBoxWidget(checkboxItems: CheckboxItems.uppercase),
                 FittedBox(
                   fit: BoxFit.contain,
                   child: Text(
@@ -66,7 +75,7 @@ class ScreenHome extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const CheckBoxWidget(),
+                const CheckBoxWidget(checkboxItems: CheckboxItems.numbers),
                 FittedBox(
                   fit: BoxFit.contain,
                   child: Text(
@@ -83,7 +92,7 @@ class ScreenHome extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.018),
             child: Row(
               children: [
-                const CheckBoxWidget(),
+                const CheckBoxWidget(checkboxItems: CheckboxItems.specialChars),
                 FittedBox(
                   fit: BoxFit.contain,
                   child: Text(
@@ -93,7 +102,6 @@ class ScreenHome extends StatelessWidget {
                         color: ConstantColor.whiteColor),
                   ),
                 ),
-                // SizedBox(width: screenWidth * 0.03),
                 const Spacer(),
                 Text(
                   "Length",
@@ -105,12 +113,16 @@ class ScreenHome extends StatelessWidget {
                 SizedBox(width: screenWidth * 0.018),
                 Column(
                   children: [
-                    Text(
-                      "10",
-                      style: TextStyle(
-                        color: ConstantColor.whiteColor,
-                        fontSize: screenWidth * 0.04,
-                      ),
+                    BlocBuilder<HomeBloc, HomeState>(
+                      builder: (context, state) {
+                        return Text(
+                          state.length.toString(),
+                          style: TextStyle(
+                            color: ConstantColor.whiteColor,
+                            fontSize: screenWidth * 0.04,
+                          ),
+                        );
+                      },
                     ),
                     Container(
                       height: 2,
@@ -120,34 +132,48 @@ class ScreenHome extends StatelessWidget {
                   ],
                 ),
                 SizedBox(width: screenWidth * 0.018),
-                Container(
-                  height: screenWidth * 0.06,
-                  width: screenWidth * 0.06,
-                  decoration: BoxDecoration(
-                    color: ConstantColor.primaryBorderColor,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.remove,
-                      color: ConstantColor.whiteColor,
-                      size: screenWidth * 0.04,
+                GestureDetector(
+                  onTap: () {
+                    context
+                        .read<HomeBloc>()
+                        .add(const HomeEvent.updateLength(isIncrease: false));
+                  },
+                  child: Container(
+                    height: screenWidth * 0.06,
+                    width: screenWidth * 0.06,
+                    decoration: BoxDecoration(
+                      color: ConstantColor.primaryBorderColor,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.remove,
+                        color: ConstantColor.whiteColor,
+                        size: screenWidth * 0.04,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(width: screenWidth * 0.018),
-                Container(
-                  height: screenWidth * 0.06,
-                  width: screenWidth * 0.06,
-                  decoration: BoxDecoration(
-                    color: ConstantColor.primaryBorderColor,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.add,
-                      color: ConstantColor.whiteColor,
-                      size: screenWidth * 0.04,
+                GestureDetector(
+                  onTap: () {
+                    context
+                        .read<HomeBloc>()
+                        .add(const HomeEvent.updateLength(isIncrease: true));
+                  },
+                  child: Container(
+                    height: screenWidth * 0.06,
+                    width: screenWidth * 0.06,
+                    decoration: BoxDecoration(
+                      color: ConstantColor.primaryBorderColor,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.add,
+                        color: ConstantColor.whiteColor,
+                        size: screenWidth * 0.04,
+                      ),
                     ),
                   ),
                 ),
@@ -161,23 +187,36 @@ class ScreenHome extends StatelessWidget {
               bottom: screenWidth * 0.02,
               top: screenWidth * 0.02,
             ),
-            child: Container(
-              height: screenHeight * 0.045,
-              decoration: BoxDecoration(
-                color: ConstantColor.primaryBorderColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Center(
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: Text(
-                    "Generate",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: ConstantColor.whiteColor,
-                      fontSize: screenWidth * 0.04,
+            child: InkWell(
+              onTap: () {
+                final queries = PasswordGenerate(
+                    length: bloc.state.length,
+                    upperCase: bloc.state.uppercase,
+                    lowerCase: bloc.state.lowerCase,
+                    numbers: bloc.state.numbers,
+                    specialChars: bloc.state.specialChars);
+                context
+                    .read<HomeBloc>()
+                    .add(HomeEvent.generatePassword(queries: queries));
+              },
+              child: Container(
+                height: screenHeight * 0.045,
+                decoration: BoxDecoration(
+                  color: ConstantColor.primaryBorderColor,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text(
+                      "Generate",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: ConstantColor.whiteColor,
+                        fontSize: screenWidth * 0.04,
+                      ),
+                      maxLines: 1,
                     ),
-                    maxLines: 1,
                   ),
                 ),
               ),
@@ -192,16 +231,27 @@ class ScreenHome extends StatelessWidget {
                   children: [
                     const Spacer(),
                     const Spacer(),
-                    const Text(
-                      "wohonsdjhfkhesf",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: ConstantColor.whiteColor,
-                      ),
+                    BlocBuilder<HomeBloc, HomeState>(
+                      builder: (context, state) {
+                        return SizedBox(
+                          width: screenWidth * 0.74,
+                          child: Center(
+                            child: Text(
+                              state.password.isEmpty ? '' : state.password,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                color: ConstantColor.whiteColor,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     const Spacer(),
                     InkWell(
                       onTap: () {
+                        _password.text = bloc.state.password;
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog.adaptive(
@@ -229,11 +279,14 @@ class ScreenHome extends StatelessWidget {
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      const TextField(
+                                      TextField(
+                                        controller: _title,
                                         cursorColor:
                                             ConstantColor.primaryBorderColor,
-                                        decoration: InputDecoration(
-                                          hintText: 'title',
+                                        style: const TextStyle(
+                                            color: ConstantColor.whiteColor),
+                                        decoration: const InputDecoration(
+                                          hintText: 'Title',
                                           hintStyle: TextStyle(
                                               color: ConstantColor.whiteColor),
                                           enabledBorder: UnderlineInputBorder(
@@ -249,10 +302,13 @@ class ScreenHome extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(height: screenHeight * 0.018),
-                                      const TextField(
+                                      TextField(
+                                        controller: _password,
+                                        style: const TextStyle(
+                                            color: ConstantColor.whiteColor),
                                         cursorColor:
                                             ConstantColor.primaryBorderColor,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           hintText: 'Password',
                                           hintStyle: TextStyle(
                                               color: ConstantColor.whiteColor),
@@ -269,24 +325,86 @@ class ScreenHome extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(height: screenHeight * 0.018),
-                                      Container(
-                                        height: screenHeight * 0.05,
-                                        width: screenWidth * 0.8,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              ConstantColor.primaryBorderColor,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        child: Center(
-                                          child: FittedBox(
-                                            fit: BoxFit.contain,
-                                            child: Text(
-                                              "Save",
-                                              style: TextStyle(
-                                                fontSize: screenHeight * 0.03,
-                                                fontWeight: FontWeight.bold,
-                                                color: ConstantColor.whiteColor,
+                                      BlocListener<SavePasswordBloc,
+                                          SavePasswordState>(
+                                        listener: (context, state) {
+                                          if (state is PasswordSavedSuccess) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                                    backgroundColor:
+                                                        ConstantColor
+                                                            .primaryBorderColor,
+                                                    content: Text(
+                                                      "Password saved",
+                                                      style: TextStyle(
+                                                          fontSize:
+                                                              screenWidth *
+                                                                  0.04,
+                                                          color: ConstantColor
+                                                              .whiteColor,
+                                                          fontWeight:
+                                                              FontWeight.w500),
+                                                    )));
+                                            Navigator.pop(context);
+                                          } else if (state
+                                              is PasswordSavedError) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                                    backgroundColor:
+                                                        ConstantColor
+                                                            .primaryBorderColor,
+                                                    content: Text(
+                                                      "Error saving password",
+                                                      style: TextStyle(
+                                                          fontSize:
+                                                              screenWidth *
+                                                                  0.04,
+                                                          color: Colors.red,
+                                                          fontWeight:
+                                                              FontWeight.w500),
+                                                    )));
+                                          }
+                                        },
+                                        child: InkWell(
+                                          onTap: () {
+                                            if (_password.text.isEmpty) {
+                                              return;
+                                            }
+                                            final savePasswordModel =
+                                                SavePasswordModel(
+                                                    title: _title.text,
+                                                    password: _password.text,
+                                                    date: DateTime.now()
+                                                        .toString());
+                                            context
+                                                .read<SavePasswordBloc>()
+                                                .add(SavePasswordEvent
+                                                    .savePassword(
+                                                        savePassword:
+                                                            savePasswordModel));
+                                          },
+                                          child: Container(
+                                            height: screenHeight * 0.05,
+                                            width: screenWidth * 0.8,
+                                            decoration: BoxDecoration(
+                                              color: ConstantColor
+                                                  .primaryBorderColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            child: Center(
+                                              child: FittedBox(
+                                                fit: BoxFit.contain,
+                                                child: Text(
+                                                  "Save",
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenHeight * 0.03,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: ConstantColor
+                                                        .whiteColor,
+                                                  ),
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -319,32 +437,5 @@ class ScreenHome extends StatelessWidget {
         ]))
       ],
     ));
-  }
-}
-
-class CheckBoxWidget extends StatefulWidget {
-  const CheckBoxWidget({
-    super.key,
-  });
-
-  @override
-  State<CheckBoxWidget> createState() => _CheckBoxWidgetState();
-}
-
-class _CheckBoxWidgetState extends State<CheckBoxWidget> {
-  bool isSelected = false;
-  @override
-  Widget build(BuildContext context) {
-    return Checkbox(
-        activeColor: ConstantColor.primaryBorderColor,
-        side: const BorderSide(
-          color: ConstantColor.whiteColor,
-        ),
-        value: isSelected,
-        onChanged: (value) {
-          setState(() {
-            isSelected = value ?? false;
-          });
-        });
   }
 }

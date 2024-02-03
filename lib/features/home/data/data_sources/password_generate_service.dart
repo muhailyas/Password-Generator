@@ -14,6 +14,7 @@ class PasswordGenerateService {
     if (passwordGenerate.upperCase) chars += upperCase;
     if (passwordGenerate.numbers) chars += numbers;
     if (passwordGenerate.specialChars) chars += specialChars;
+    if (chars.isEmpty) chars += lowerCase + numbers;
     final password = List.generate(passwordGenerate.length, (index) {
       final indexRandom = Random.secure().nextInt(chars.length);
       return chars[indexRandom];
