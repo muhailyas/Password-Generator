@@ -1,21 +1,22 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:password_generator/core/resources/data_state.dart';
 import 'package:password_generator/features/home/data/data_sources/local/save_password_db.dart';
 import 'package:password_generator/features/home/data/models/password_generate_model.dart';
 import 'package:password_generator/features/home/domain/use_cases/generate_pass_usecese/generate_pass_usecese.dart';
 import 'package:password_generator/features/home/domain/use_cases/initialize_db_usecase/initialize_db_usecase.dart';
-
 import '../../../data/repository/save_password_repo_impl.dart';
-
 part 'home_event.dart';
 part 'home_state.dart';
 part 'home_bloc.freezed.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GeneratePasswordUseCase _useCase;
+  final TextEditingController title = TextEditingController();
+  final TextEditingController password = TextEditingController();
   HomeBloc(this._useCase) : super(HomeState.initial()) {
     on<_ToggleLowerCase>(toggleLowerCase);
     on<_ToggleUpperCase>(toggleUpperCase);

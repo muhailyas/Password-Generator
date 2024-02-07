@@ -26,7 +26,7 @@ class ScreenSplash extends StatelessWidget {
                 context, MaterialPageRoute(builder: (context) => ScreenHome()));
           }
         },
-        child: const Center(
+        child: Center(
           child: Center(child: AnimatedPasswordText()),
         ),
       ),

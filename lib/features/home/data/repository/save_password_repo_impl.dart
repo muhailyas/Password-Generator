@@ -32,4 +32,25 @@ class SavePasswordRepositoryImpl implements SavePasswordRepository {
   Future<void> initilizeSavedPasswordDb() async {
     _savePasswordService.initializeDatabase();
   }
+
+  @override
+  Future<void> deletePassword({required int id}) async {
+    try {
+      await _savePasswordService.deletePassword(id: id);
+    } catch (e) {
+      return;
+    }
+  }
+
+  @override
+  Future<DataState<SavePasswordEntity>> updatePassword(
+      {required SavePasswordModel savePasswordModel, required int id}) async {
+    try {
+      final respose = await _savePasswordService.updatePassword(
+          savePasswordModel: savePasswordModel, id: id);
+      return DataSuccess(respose);
+    } catch (e) {
+      return DataFailed(Exception(e));
+    }
+  }
 }

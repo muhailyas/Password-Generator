@@ -10,4 +10,7 @@ class SavePasswordState with _$SavePasswordState {
           {required List<SavePasswordEntity> savedPasswords}) =
       PasswordFetchSuccess;
   const factory SavePasswordState.passwordFetchError() = PasswordFetchError;
+  const factory SavePasswordState.deleteSuccess() = DeleteSuccess;
+  const factory SavePasswordState.updateSuccess() = UpdateSuccess;
+  const factory SavePasswordState.updateError() = UpdateError;
 }

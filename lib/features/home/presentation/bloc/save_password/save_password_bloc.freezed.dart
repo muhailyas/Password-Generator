@@ -21,6 +21,7 @@ mixin _$SavePasswordEvent {
     required TResult Function() started,
     required TResult Function(SavePasswordEntity savePassword) savePassword,
     required TResult Function() getAllPasswords,
+    required TResult Function(int id) deletePassword,
     required TResult Function() initializeSavedDb,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$SavePasswordEvent {
     TResult? Function()? started,
     TResult? Function(SavePasswordEntity savePassword)? savePassword,
     TResult? Function()? getAllPasswords,
+    TResult? Function(int id)? deletePassword,
     TResult? Function()? initializeSavedDb,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$SavePasswordEvent {
     TResult Function()? started,
     TResult Function(SavePasswordEntity savePassword)? savePassword,
     TResult Function()? getAllPasswords,
+    TResult Function(int id)? deletePassword,
     TResult Function()? initializeSavedDb,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$SavePasswordEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_SavePassword value) savePassword,
     required TResult Function(_GetAllPasswords value) getAllPasswords,
+    required TResult Function(_DeletePassword value) deletePassword,
     required TResult Function(_InitializeDb value) initializeSavedDb,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$SavePasswordEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_SavePassword value)? savePassword,
     TResult? Function(_GetAllPasswords value)? getAllPasswords,
+    TResult? Function(_DeletePassword value)? deletePassword,
     TResult? Function(_InitializeDb value)? initializeSavedDb,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$SavePasswordEvent {
     TResult Function(_Started value)? started,
     TResult Function(_SavePassword value)? savePassword,
     TResult Function(_GetAllPasswords value)? getAllPasswords,
+    TResult Function(_DeletePassword value)? deletePassword,
     TResult Function(_InitializeDb value)? initializeSavedDb,
     required TResult orElse(),
   }) =>
@@ -127,6 +133,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function(SavePasswordEntity savePassword) savePassword,
     required TResult Function() getAllPasswords,
+    required TResult Function(int id) deletePassword,
     required TResult Function() initializeSavedDb,
   }) {
     return started();
@@ -138,6 +145,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function(SavePasswordEntity savePassword)? savePassword,
     TResult? Function()? getAllPasswords,
+    TResult? Function(int id)? deletePassword,
     TResult? Function()? initializeSavedDb,
   }) {
     return started?.call();
@@ -149,6 +157,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function(SavePasswordEntity savePassword)? savePassword,
     TResult Function()? getAllPasswords,
+    TResult Function(int id)? deletePassword,
     TResult Function()? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -164,6 +173,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_SavePassword value) savePassword,
     required TResult Function(_GetAllPasswords value) getAllPasswords,
+    required TResult Function(_DeletePassword value) deletePassword,
     required TResult Function(_InitializeDb value) initializeSavedDb,
   }) {
     return started(this);
@@ -175,6 +185,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_SavePassword value)? savePassword,
     TResult? Function(_GetAllPasswords value)? getAllPasswords,
+    TResult? Function(_DeletePassword value)? deletePassword,
     TResult? Function(_InitializeDb value)? initializeSavedDb,
   }) {
     return started?.call(this);
@@ -186,6 +197,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_SavePassword value)? savePassword,
     TResult Function(_GetAllPasswords value)? getAllPasswords,
+    TResult Function(_DeletePassword value)? deletePassword,
     TResult Function(_InitializeDb value)? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -268,6 +280,7 @@ class _$SavePasswordImpl implements _SavePassword {
     required TResult Function() started,
     required TResult Function(SavePasswordEntity savePassword) savePassword,
     required TResult Function() getAllPasswords,
+    required TResult Function(int id) deletePassword,
     required TResult Function() initializeSavedDb,
   }) {
     return savePassword(this.savePassword);
@@ -279,6 +292,7 @@ class _$SavePasswordImpl implements _SavePassword {
     TResult? Function()? started,
     TResult? Function(SavePasswordEntity savePassword)? savePassword,
     TResult? Function()? getAllPasswords,
+    TResult? Function(int id)? deletePassword,
     TResult? Function()? initializeSavedDb,
   }) {
     return savePassword?.call(this.savePassword);
@@ -290,6 +304,7 @@ class _$SavePasswordImpl implements _SavePassword {
     TResult Function()? started,
     TResult Function(SavePasswordEntity savePassword)? savePassword,
     TResult Function()? getAllPasswords,
+    TResult Function(int id)? deletePassword,
     TResult Function()? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -305,6 +320,7 @@ class _$SavePasswordImpl implements _SavePassword {
     required TResult Function(_Started value) started,
     required TResult Function(_SavePassword value) savePassword,
     required TResult Function(_GetAllPasswords value) getAllPasswords,
+    required TResult Function(_DeletePassword value) deletePassword,
     required TResult Function(_InitializeDb value) initializeSavedDb,
   }) {
     return savePassword(this);
@@ -316,6 +332,7 @@ class _$SavePasswordImpl implements _SavePassword {
     TResult? Function(_Started value)? started,
     TResult? Function(_SavePassword value)? savePassword,
     TResult? Function(_GetAllPasswords value)? getAllPasswords,
+    TResult? Function(_DeletePassword value)? deletePassword,
     TResult? Function(_InitializeDb value)? initializeSavedDb,
   }) {
     return savePassword?.call(this);
@@ -327,6 +344,7 @@ class _$SavePasswordImpl implements _SavePassword {
     TResult Function(_Started value)? started,
     TResult Function(_SavePassword value)? savePassword,
     TResult Function(_GetAllPasswords value)? getAllPasswords,
+    TResult Function(_DeletePassword value)? deletePassword,
     TResult Function(_InitializeDb value)? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -388,6 +406,7 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
     required TResult Function() started,
     required TResult Function(SavePasswordEntity savePassword) savePassword,
     required TResult Function() getAllPasswords,
+    required TResult Function(int id) deletePassword,
     required TResult Function() initializeSavedDb,
   }) {
     return getAllPasswords();
@@ -399,6 +418,7 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
     TResult? Function()? started,
     TResult? Function(SavePasswordEntity savePassword)? savePassword,
     TResult? Function()? getAllPasswords,
+    TResult? Function(int id)? deletePassword,
     TResult? Function()? initializeSavedDb,
   }) {
     return getAllPasswords?.call();
@@ -410,6 +430,7 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
     TResult Function()? started,
     TResult Function(SavePasswordEntity savePassword)? savePassword,
     TResult Function()? getAllPasswords,
+    TResult Function(int id)? deletePassword,
     TResult Function()? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -425,6 +446,7 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
     required TResult Function(_Started value) started,
     required TResult Function(_SavePassword value) savePassword,
     required TResult Function(_GetAllPasswords value) getAllPasswords,
+    required TResult Function(_DeletePassword value) deletePassword,
     required TResult Function(_InitializeDb value) initializeSavedDb,
   }) {
     return getAllPasswords(this);
@@ -436,6 +458,7 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
     TResult? Function(_Started value)? started,
     TResult? Function(_SavePassword value)? savePassword,
     TResult? Function(_GetAllPasswords value)? getAllPasswords,
+    TResult? Function(_DeletePassword value)? deletePassword,
     TResult? Function(_InitializeDb value)? initializeSavedDb,
   }) {
     return getAllPasswords?.call(this);
@@ -447,6 +470,7 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
     TResult Function(_Started value)? started,
     TResult Function(_SavePassword value)? savePassword,
     TResult Function(_GetAllPasswords value)? getAllPasswords,
+    TResult Function(_DeletePassword value)? deletePassword,
     TResult Function(_InitializeDb value)? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -459,6 +483,158 @@ class _$GetAllPasswordsImpl implements _GetAllPasswords {
 
 abstract class _GetAllPasswords implements SavePasswordEvent {
   const factory _GetAllPasswords() = _$GetAllPasswordsImpl;
+}
+
+/// @nodoc
+abstract class _$$DeletePasswordImplCopyWith<$Res> {
+  factory _$$DeletePasswordImplCopyWith(_$DeletePasswordImpl value,
+          $Res Function(_$DeletePasswordImpl) then) =
+      __$$DeletePasswordImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$DeletePasswordImplCopyWithImpl<$Res>
+    extends _$SavePasswordEventCopyWithImpl<$Res, _$DeletePasswordImpl>
+    implements _$$DeletePasswordImplCopyWith<$Res> {
+  __$$DeletePasswordImplCopyWithImpl(
+      _$DeletePasswordImpl _value, $Res Function(_$DeletePasswordImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$DeletePasswordImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeletePasswordImpl implements _DeletePassword {
+  const _$DeletePasswordImpl({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'SavePasswordEvent.deletePassword(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeletePasswordImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeletePasswordImplCopyWith<_$DeletePasswordImpl> get copyWith =>
+      __$$DeletePasswordImplCopyWithImpl<_$DeletePasswordImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(SavePasswordEntity savePassword) savePassword,
+    required TResult Function() getAllPasswords,
+    required TResult Function(int id) deletePassword,
+    required TResult Function() initializeSavedDb,
+  }) {
+    return deletePassword(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(SavePasswordEntity savePassword)? savePassword,
+    TResult? Function()? getAllPasswords,
+    TResult? Function(int id)? deletePassword,
+    TResult? Function()? initializeSavedDb,
+  }) {
+    return deletePassword?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(SavePasswordEntity savePassword)? savePassword,
+    TResult Function()? getAllPasswords,
+    TResult Function(int id)? deletePassword,
+    TResult Function()? initializeSavedDb,
+    required TResult orElse(),
+  }) {
+    if (deletePassword != null) {
+      return deletePassword(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SavePassword value) savePassword,
+    required TResult Function(_GetAllPasswords value) getAllPasswords,
+    required TResult Function(_DeletePassword value) deletePassword,
+    required TResult Function(_InitializeDb value) initializeSavedDb,
+  }) {
+    return deletePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_SavePassword value)? savePassword,
+    TResult? Function(_GetAllPasswords value)? getAllPasswords,
+    TResult? Function(_DeletePassword value)? deletePassword,
+    TResult? Function(_InitializeDb value)? initializeSavedDb,
+  }) {
+    return deletePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SavePassword value)? savePassword,
+    TResult Function(_GetAllPasswords value)? getAllPasswords,
+    TResult Function(_DeletePassword value)? deletePassword,
+    TResult Function(_InitializeDb value)? initializeSavedDb,
+    required TResult orElse(),
+  }) {
+    if (deletePassword != null) {
+      return deletePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeletePassword implements SavePasswordEvent {
+  const factory _DeletePassword({required final int id}) = _$DeletePasswordImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$DeletePasswordImplCopyWith<_$DeletePasswordImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -502,6 +678,7 @@ class _$InitializeDbImpl implements _InitializeDb {
     required TResult Function() started,
     required TResult Function(SavePasswordEntity savePassword) savePassword,
     required TResult Function() getAllPasswords,
+    required TResult Function(int id) deletePassword,
     required TResult Function() initializeSavedDb,
   }) {
     return initializeSavedDb();
@@ -513,6 +690,7 @@ class _$InitializeDbImpl implements _InitializeDb {
     TResult? Function()? started,
     TResult? Function(SavePasswordEntity savePassword)? savePassword,
     TResult? Function()? getAllPasswords,
+    TResult? Function(int id)? deletePassword,
     TResult? Function()? initializeSavedDb,
   }) {
     return initializeSavedDb?.call();
@@ -524,6 +702,7 @@ class _$InitializeDbImpl implements _InitializeDb {
     TResult Function()? started,
     TResult Function(SavePasswordEntity savePassword)? savePassword,
     TResult Function()? getAllPasswords,
+    TResult Function(int id)? deletePassword,
     TResult Function()? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -539,6 +718,7 @@ class _$InitializeDbImpl implements _InitializeDb {
     required TResult Function(_Started value) started,
     required TResult Function(_SavePassword value) savePassword,
     required TResult Function(_GetAllPasswords value) getAllPasswords,
+    required TResult Function(_DeletePassword value) deletePassword,
     required TResult Function(_InitializeDb value) initializeSavedDb,
   }) {
     return initializeSavedDb(this);
@@ -550,6 +730,7 @@ class _$InitializeDbImpl implements _InitializeDb {
     TResult? Function(_Started value)? started,
     TResult? Function(_SavePassword value)? savePassword,
     TResult? Function(_GetAllPasswords value)? getAllPasswords,
+    TResult? Function(_DeletePassword value)? deletePassword,
     TResult? Function(_InitializeDb value)? initializeSavedDb,
   }) {
     return initializeSavedDb?.call(this);
@@ -561,6 +742,7 @@ class _$InitializeDbImpl implements _InitializeDb {
     TResult Function(_Started value)? started,
     TResult Function(_SavePassword value)? savePassword,
     TResult Function(_GetAllPasswords value)? getAllPasswords,
+    TResult Function(_DeletePassword value)? deletePassword,
     TResult Function(_InitializeDb value)? initializeSavedDb,
     required TResult orElse(),
   }) {
@@ -586,6 +768,9 @@ mixin _$SavePasswordState {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -597,6 +782,9 @@ mixin _$SavePasswordState {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -608,6 +796,9 @@ mixin _$SavePasswordState {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -619,6 +810,9 @@ mixin _$SavePasswordState {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -629,6 +823,9 @@ mixin _$SavePasswordState {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -639,6 +836,9 @@ mixin _$SavePasswordState {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -707,6 +907,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) {
     return initial();
   }
@@ -721,6 +924,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) {
     return initial?.call();
   }
@@ -735,6 +941,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -752,6 +961,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) {
     return initial(this);
   }
@@ -765,6 +977,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) {
     return initial?.call(this);
   }
@@ -778,6 +993,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -837,6 +1055,9 @@ class _$PasswordSavedSuccessImpl implements PasswordSavedSuccess {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) {
     return passwordSavedSuccess();
   }
@@ -851,6 +1072,9 @@ class _$PasswordSavedSuccessImpl implements PasswordSavedSuccess {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) {
     return passwordSavedSuccess?.call();
   }
@@ -865,6 +1089,9 @@ class _$PasswordSavedSuccessImpl implements PasswordSavedSuccess {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) {
     if (passwordSavedSuccess != null) {
@@ -882,6 +1109,9 @@ class _$PasswordSavedSuccessImpl implements PasswordSavedSuccess {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) {
     return passwordSavedSuccess(this);
   }
@@ -895,6 +1125,9 @@ class _$PasswordSavedSuccessImpl implements PasswordSavedSuccess {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) {
     return passwordSavedSuccess?.call(this);
   }
@@ -908,6 +1141,9 @@ class _$PasswordSavedSuccessImpl implements PasswordSavedSuccess {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) {
     if (passwordSavedSuccess != null) {
@@ -966,6 +1202,9 @@ class _$PasswordSavedErrorImpl implements PasswordSavedError {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) {
     return passwordSavedError();
   }
@@ -980,6 +1219,9 @@ class _$PasswordSavedErrorImpl implements PasswordSavedError {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) {
     return passwordSavedError?.call();
   }
@@ -994,6 +1236,9 @@ class _$PasswordSavedErrorImpl implements PasswordSavedError {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) {
     if (passwordSavedError != null) {
@@ -1011,6 +1256,9 @@ class _$PasswordSavedErrorImpl implements PasswordSavedError {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) {
     return passwordSavedError(this);
   }
@@ -1024,6 +1272,9 @@ class _$PasswordSavedErrorImpl implements PasswordSavedError {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) {
     return passwordSavedError?.call(this);
   }
@@ -1037,6 +1288,9 @@ class _$PasswordSavedErrorImpl implements PasswordSavedError {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) {
     if (passwordSavedError != null) {
@@ -1096,6 +1350,9 @@ class _$PasswordFetchLoadingImpl implements PasswordFetchLoading {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) {
     return passwordFetchLoading();
   }
@@ -1110,6 +1367,9 @@ class _$PasswordFetchLoadingImpl implements PasswordFetchLoading {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) {
     return passwordFetchLoading?.call();
   }
@@ -1124,6 +1384,9 @@ class _$PasswordFetchLoadingImpl implements PasswordFetchLoading {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) {
     if (passwordFetchLoading != null) {
@@ -1141,6 +1404,9 @@ class _$PasswordFetchLoadingImpl implements PasswordFetchLoading {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) {
     return passwordFetchLoading(this);
   }
@@ -1154,6 +1420,9 @@ class _$PasswordFetchLoadingImpl implements PasswordFetchLoading {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) {
     return passwordFetchLoading?.call(this);
   }
@@ -1167,6 +1436,9 @@ class _$PasswordFetchLoadingImpl implements PasswordFetchLoading {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) {
     if (passwordFetchLoading != null) {
@@ -1262,6 +1534,9 @@ class _$PasswordFetchSuccessImpl implements PasswordFetchSuccess {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) {
     return passwordFetchSuccess(savedPasswords);
   }
@@ -1276,6 +1551,9 @@ class _$PasswordFetchSuccessImpl implements PasswordFetchSuccess {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) {
     return passwordFetchSuccess?.call(savedPasswords);
   }
@@ -1290,6 +1568,9 @@ class _$PasswordFetchSuccessImpl implements PasswordFetchSuccess {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) {
     if (passwordFetchSuccess != null) {
@@ -1307,6 +1588,9 @@ class _$PasswordFetchSuccessImpl implements PasswordFetchSuccess {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) {
     return passwordFetchSuccess(this);
   }
@@ -1320,6 +1604,9 @@ class _$PasswordFetchSuccessImpl implements PasswordFetchSuccess {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) {
     return passwordFetchSuccess?.call(this);
   }
@@ -1333,6 +1620,9 @@ class _$PasswordFetchSuccessImpl implements PasswordFetchSuccess {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) {
     if (passwordFetchSuccess != null) {
@@ -1398,6 +1688,9 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
     required TResult Function(List<SavePasswordEntity> savedPasswords)
         passwordFetchSuccess,
     required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
   }) {
     return passwordFetchError();
   }
@@ -1412,6 +1705,9 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
     TResult? Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
   }) {
     return passwordFetchError?.call();
   }
@@ -1426,6 +1722,9 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
     TResult Function(List<SavePasswordEntity> savedPasswords)?
         passwordFetchSuccess,
     TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
     required TResult orElse(),
   }) {
     if (passwordFetchError != null) {
@@ -1443,6 +1742,9 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
     required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
     required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
     required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
   }) {
     return passwordFetchError(this);
   }
@@ -1456,6 +1758,9 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
     TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
   }) {
     return passwordFetchError?.call(this);
   }
@@ -1469,6 +1774,9 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
     TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
     TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
     TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
     required TResult orElse(),
   }) {
     if (passwordFetchError != null) {
@@ -1480,4 +1788,445 @@ class _$PasswordFetchErrorImpl implements PasswordFetchError {
 
 abstract class PasswordFetchError implements SavePasswordState {
   const factory PasswordFetchError() = _$PasswordFetchErrorImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteSuccessImplCopyWith<$Res> {
+  factory _$$DeleteSuccessImplCopyWith(
+          _$DeleteSuccessImpl value, $Res Function(_$DeleteSuccessImpl) then) =
+      __$$DeleteSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteSuccessImplCopyWithImpl<$Res>
+    extends _$SavePasswordStateCopyWithImpl<$Res, _$DeleteSuccessImpl>
+    implements _$$DeleteSuccessImplCopyWith<$Res> {
+  __$$DeleteSuccessImplCopyWithImpl(
+      _$DeleteSuccessImpl _value, $Res Function(_$DeleteSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteSuccessImpl implements DeleteSuccess {
+  const _$DeleteSuccessImpl();
+
+  @override
+  String toString() {
+    return 'SavePasswordState.deleteSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() passwordSavedSuccess,
+    required TResult Function() passwordSavedError,
+    required TResult Function() passwordFetchLoading,
+    required TResult Function(List<SavePasswordEntity> savedPasswords)
+        passwordFetchSuccess,
+    required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
+  }) {
+    return deleteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? passwordSavedSuccess,
+    TResult? Function()? passwordSavedError,
+    TResult? Function()? passwordFetchLoading,
+    TResult? Function(List<SavePasswordEntity> savedPasswords)?
+        passwordFetchSuccess,
+    TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
+  }) {
+    return deleteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? passwordSavedSuccess,
+    TResult Function()? passwordSavedError,
+    TResult Function()? passwordFetchLoading,
+    TResult Function(List<SavePasswordEntity> savedPasswords)?
+        passwordFetchSuccess,
+    TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
+    required TResult orElse(),
+  }) {
+    if (deleteSuccess != null) {
+      return deleteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(PasswordSavedSuccess value) passwordSavedSuccess,
+    required TResult Function(PasswordSavedError value) passwordSavedError,
+    required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
+    required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
+    required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
+  }) {
+    return deleteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(PasswordSavedSuccess value)? passwordSavedSuccess,
+    TResult? Function(PasswordSavedError value)? passwordSavedError,
+    TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
+    TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
+    TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
+  }) {
+    return deleteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(PasswordSavedSuccess value)? passwordSavedSuccess,
+    TResult Function(PasswordSavedError value)? passwordSavedError,
+    TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
+    TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
+    TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
+    required TResult orElse(),
+  }) {
+    if (deleteSuccess != null) {
+      return deleteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteSuccess implements SavePasswordState {
+  const factory DeleteSuccess() = _$DeleteSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateSuccessImplCopyWith<$Res> {
+  factory _$$UpdateSuccessImplCopyWith(
+          _$UpdateSuccessImpl value, $Res Function(_$UpdateSuccessImpl) then) =
+      __$$UpdateSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateSuccessImplCopyWithImpl<$Res>
+    extends _$SavePasswordStateCopyWithImpl<$Res, _$UpdateSuccessImpl>
+    implements _$$UpdateSuccessImplCopyWith<$Res> {
+  __$$UpdateSuccessImplCopyWithImpl(
+      _$UpdateSuccessImpl _value, $Res Function(_$UpdateSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateSuccessImpl implements UpdateSuccess {
+  const _$UpdateSuccessImpl();
+
+  @override
+  String toString() {
+    return 'SavePasswordState.updateSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() passwordSavedSuccess,
+    required TResult Function() passwordSavedError,
+    required TResult Function() passwordFetchLoading,
+    required TResult Function(List<SavePasswordEntity> savedPasswords)
+        passwordFetchSuccess,
+    required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
+  }) {
+    return updateSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? passwordSavedSuccess,
+    TResult? Function()? passwordSavedError,
+    TResult? Function()? passwordFetchLoading,
+    TResult? Function(List<SavePasswordEntity> savedPasswords)?
+        passwordFetchSuccess,
+    TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
+  }) {
+    return updateSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? passwordSavedSuccess,
+    TResult Function()? passwordSavedError,
+    TResult Function()? passwordFetchLoading,
+    TResult Function(List<SavePasswordEntity> savedPasswords)?
+        passwordFetchSuccess,
+    TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
+    required TResult orElse(),
+  }) {
+    if (updateSuccess != null) {
+      return updateSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(PasswordSavedSuccess value) passwordSavedSuccess,
+    required TResult Function(PasswordSavedError value) passwordSavedError,
+    required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
+    required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
+    required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
+  }) {
+    return updateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(PasswordSavedSuccess value)? passwordSavedSuccess,
+    TResult? Function(PasswordSavedError value)? passwordSavedError,
+    TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
+    TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
+    TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
+  }) {
+    return updateSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(PasswordSavedSuccess value)? passwordSavedSuccess,
+    TResult Function(PasswordSavedError value)? passwordSavedError,
+    TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
+    TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
+    TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
+    required TResult orElse(),
+  }) {
+    if (updateSuccess != null) {
+      return updateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSuccess implements SavePasswordState {
+  const factory UpdateSuccess() = _$UpdateSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateErrorImplCopyWith<$Res> {
+  factory _$$UpdateErrorImplCopyWith(
+          _$UpdateErrorImpl value, $Res Function(_$UpdateErrorImpl) then) =
+      __$$UpdateErrorImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateErrorImplCopyWithImpl<$Res>
+    extends _$SavePasswordStateCopyWithImpl<$Res, _$UpdateErrorImpl>
+    implements _$$UpdateErrorImplCopyWith<$Res> {
+  __$$UpdateErrorImplCopyWithImpl(
+      _$UpdateErrorImpl _value, $Res Function(_$UpdateErrorImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateErrorImpl implements UpdateError {
+  const _$UpdateErrorImpl();
+
+  @override
+  String toString() {
+    return 'SavePasswordState.updateError()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateErrorImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() passwordSavedSuccess,
+    required TResult Function() passwordSavedError,
+    required TResult Function() passwordFetchLoading,
+    required TResult Function(List<SavePasswordEntity> savedPasswords)
+        passwordFetchSuccess,
+    required TResult Function() passwordFetchError,
+    required TResult Function() deleteSuccess,
+    required TResult Function() updateSuccess,
+    required TResult Function() updateError,
+  }) {
+    return updateError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? passwordSavedSuccess,
+    TResult? Function()? passwordSavedError,
+    TResult? Function()? passwordFetchLoading,
+    TResult? Function(List<SavePasswordEntity> savedPasswords)?
+        passwordFetchSuccess,
+    TResult? Function()? passwordFetchError,
+    TResult? Function()? deleteSuccess,
+    TResult? Function()? updateSuccess,
+    TResult? Function()? updateError,
+  }) {
+    return updateError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? passwordSavedSuccess,
+    TResult Function()? passwordSavedError,
+    TResult Function()? passwordFetchLoading,
+    TResult Function(List<SavePasswordEntity> savedPasswords)?
+        passwordFetchSuccess,
+    TResult Function()? passwordFetchError,
+    TResult Function()? deleteSuccess,
+    TResult Function()? updateSuccess,
+    TResult Function()? updateError,
+    required TResult orElse(),
+  }) {
+    if (updateError != null) {
+      return updateError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(PasswordSavedSuccess value) passwordSavedSuccess,
+    required TResult Function(PasswordSavedError value) passwordSavedError,
+    required TResult Function(PasswordFetchLoading value) passwordFetchLoading,
+    required TResult Function(PasswordFetchSuccess value) passwordFetchSuccess,
+    required TResult Function(PasswordFetchError value) passwordFetchError,
+    required TResult Function(DeleteSuccess value) deleteSuccess,
+    required TResult Function(UpdateSuccess value) updateSuccess,
+    required TResult Function(UpdateError value) updateError,
+  }) {
+    return updateError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(PasswordSavedSuccess value)? passwordSavedSuccess,
+    TResult? Function(PasswordSavedError value)? passwordSavedError,
+    TResult? Function(PasswordFetchLoading value)? passwordFetchLoading,
+    TResult? Function(PasswordFetchSuccess value)? passwordFetchSuccess,
+    TResult? Function(PasswordFetchError value)? passwordFetchError,
+    TResult? Function(DeleteSuccess value)? deleteSuccess,
+    TResult? Function(UpdateSuccess value)? updateSuccess,
+    TResult? Function(UpdateError value)? updateError,
+  }) {
+    return updateError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(PasswordSavedSuccess value)? passwordSavedSuccess,
+    TResult Function(PasswordSavedError value)? passwordSavedError,
+    TResult Function(PasswordFetchLoading value)? passwordFetchLoading,
+    TResult Function(PasswordFetchSuccess value)? passwordFetchSuccess,
+    TResult Function(PasswordFetchError value)? passwordFetchError,
+    TResult Function(DeleteSuccess value)? deleteSuccess,
+    TResult Function(UpdateSuccess value)? updateSuccess,
+    TResult Function(UpdateError value)? updateError,
+    required TResult orElse(),
+  }) {
+    if (updateError != null) {
+      return updateError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateError implements SavePasswordState {
+  const factory UpdateError() = _$UpdateErrorImpl;
 }

@@ -37,4 +37,20 @@ class SavePasswordService {
         await _db.rawQuery('SELECT * FROM Password');
     return list.map((json) => SavePasswordModel.fromJson(json)).toList();
   }
+
+  Future<SavePasswordEntity> updatePassword(
+      {required SavePasswordModel savePasswordModel, required int id}) async {
+    await _db
+        .rawUpdate('UPDATE Password SET title=?,password=?,date=? WHERE id=?', [
+      savePasswordModel.title,
+      savePasswordModel.password,
+      savePasswordModel.date,
+      savePasswordModel.id,
+    ]);
+    return savePasswordModel;
+  }
+
+  Future<void> deletePassword({required int id}) async {
+    await _db.delete('Password', where: 'id=?', whereArgs: [id]);
+  }
 }

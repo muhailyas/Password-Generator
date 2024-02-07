@@ -6,5 +6,7 @@ abstract class SavePasswordRepository {
   Future<DataState<SavePasswordEntity>> savePassword(
       {required SavePasswordModel savePassword});
   Future<DataState<List<SavePasswordEntity>>> getAllSavedPasswords();
+  Future<DataState<SavePasswordEntity>> updatePassword({required SavePasswordModel savePasswordModel, required int id});
+  Future<void> deletePassword({required int id});
   Future<void> initilizeSavedPasswordDb();
 }

@@ -6,5 +6,7 @@ class SavePasswordEvent with _$SavePasswordEvent {
   const factory SavePasswordEvent.savePassword(
       {required SavePasswordEntity savePassword}) = _SavePassword;
   const factory SavePasswordEvent.getAllPasswords() = _GetAllPasswords;
+  const factory SavePasswordEvent.deletePassword({required int id}) =
+      _DeletePassword;
   const factory SavePasswordEvent.initializeSavedDb() = _InitializeDb;
 }
